@@ -86,7 +86,8 @@ class _WebExampleTwoState extends State<WebExampleTwo> {
                   InAppWebView(
                     key: webViewKey,
                     initialUrlRequest: URLRequest(
-                      url: Uri.parse('https://resizeimage.net/'),
+                      url: Uri.parse("https://192.168.1.200"),
+                      method: 'POST',
                       headers: {},
                     ), // "https://unsplash.com/photos/odxB5oIG_iA"
                     initialOptions: options,

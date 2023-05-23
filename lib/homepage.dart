@@ -6,7 +6,6 @@ import 'package:full_webview/check_internet.dart';
 import 'webview/example2.dart';
 import 'webview/example3.dart';
 import 'webview/example4.dart';
-import 'webview/example5.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   var _scaffoldKey = GlobalKey<ScaffoldState>();
   final WebExampleThree inAppBrowser = WebExampleThree();
   final WebExampleFour inAppChrome = WebExampleFour();
-  String _url = "https://github.com/techwithsam";
+  String _url = "https://github.com/ay-at3002";
   int checkInt = 0;
 
   var options = InAppBrowserClassOptions(
@@ -80,29 +79,29 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text('Flutter Webview Tutorial'),
+        title: Text('Flutter Webview'),
         centerTitle: true,
         elevation: 0,
       ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.fromLTRB(3, 6, 3, 6),
-        child: RichText(
-          text: TextSpan(
-            text: 'Connect with me Online - ',
-            style: TextStyle(color: Colors.black),
-            recognizer: TapGestureRecognizer()..onTap = () => _launchURL(),
-            children: [
-              TextSpan(
-                text: '@techwithsam',
-                style:
-                    TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
-                recognizer: TapGestureRecognizer()..onTap = () => _launchURL(),
-              )
-            ],
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ),
+      // bottomNavigationBar: Padding(
+      //   padding: EdgeInsets.fromLTRB(3, 6, 3, 6),
+      //   child: RichText(
+      //     text: TextSpan(
+      //       text: 'Connect with me Online - ',
+      //       style: TextStyle(color: Colors.black),
+      //       recognizer: TapGestureRecognizer()..onTap = () => _launchURL(),
+      //       children: [
+      //         TextSpan(
+      //           text: '@techwithsam',
+      //           style:
+      //               TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
+      //           recognizer: TapGestureRecognizer()..onTap = () => _launchURL(),
+      //         )
+      //       ],
+      //     ),
+      //     textAlign: TextAlign.center,
+      //   ),
+      // ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -117,64 +116,64 @@ class _HomePageState extends State<HomePage> {
                       ));
                 },
                 child: Text(
-                  'Example 2',
+                  'Launch URL',
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.green,
                 padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
               ),
-              SizedBox(height: 12),
-              MaterialButton(
-                onPressed: () {
-                  inAppBrowser.openUrlRequest(
-                      urlRequest: URLRequest(url: Uri.parse(_url)),
-                      options: options);
-                },
-                child: Text(
-                  'Example 3',
-                  style: TextStyle(color: Colors.white),
-                ),
-                color: Colors.purple[700],
-                padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
-              ),
-              SizedBox(height: 12),
-              MaterialButton(
-                onPressed: () {
-                  checkInt == 1
-                      ? inAppChrome.open(
-                          url: Uri.parse(_url),
-                          options: ChromeSafariBrowserClassOptions(
-                            android: AndroidChromeCustomTabsOptions(
-                                addDefaultShareMenuItem: false),
-                            ios: IOSSafariOptions(barCollapsingEnabled: true),
-                          ),
-                        )
-                      : ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('No internet connection!'),
-                          ),
-                        );
-                },
-                child: Text(
-                  'Example 4',
-                  style: TextStyle(color: Colors.white),
-                ),
-                color: Colors.pink[900],
-                padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
-              ),
-              SizedBox(height: 12),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => WebExampleFive(url: _url)));
-                },
-                child: Text(
-                  'Example 5',
-                  style: TextStyle(color: Colors.white),
-                ),
-                color: Colors.yellow[900],
-                padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
-              ),
+              // SizedBox(height: 12),
+              // MaterialButton(
+              //   onPressed: () {
+              //     inAppBrowser.openUrlRequest(
+              //         urlRequest: URLRequest(url: Uri.parse(_url)),
+              //         options: options);
+              //   },
+              //   child: Text(
+              //     'Example 3',
+              //     style: TextStyle(color: Colors.white),
+              //   ),
+              //   color: Colors.purple[700],
+              //   padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
+              // ),
+              // SizedBox(height: 12),
+              // MaterialButton(
+              //   onPressed: () {
+              //     checkInt == 1
+              //         ? inAppChrome.open(
+              //             url: Uri.parse(_url),
+              //             options: ChromeSafariBrowserClassOptions(
+              //               android: AndroidChromeCustomTabsOptions(
+              //                   addDefaultShareMenuItem: false),
+              //               ios: IOSSafariOptions(barCollapsingEnabled: true),
+              //             ),
+              //           )
+              //         : ScaffoldMessenger.of(context).showSnackBar(
+              //             SnackBar(
+              //               content: Text('No internet connection!'),
+              //             ),
+              //           );
+              //   },
+              //   child: Text(
+              //     'Example 4',
+              //     style: TextStyle(color: Colors.white),
+              //   ),
+              //   color: Colors.pink[900],
+              //   padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
+              // ),
+              // SizedBox(height: 12),
+              // MaterialButton(
+              //   onPressed: () {
+              //     Navigator.of(context).push(MaterialPageRoute(
+              //         builder: (context) => WebExampleFive(url: _url)));
+              //   },
+              //   child: Text(
+              //     'Example 5',
+              //     style: TextStyle(color: Colors.white),
+              //   ),
+              //   color: Colors.yellow[900],
+              //   padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
+              // ),
             ],
           ),
         ),
